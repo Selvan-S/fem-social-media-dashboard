@@ -1,0 +1,45 @@
+@use '../util' as *;
+
+.header{
+
+    &__subtitle{
+        font-size: rem(14);
+        font-weight: 700;
+        color: var(--subtitle-color);
+        
+    }
+
+    @media (max-width: 639px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        margin-top: rem(36);
+
+        &__title{
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 639px) {
+       
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: rem(36);
+    
+        @include breakpoint(medium){
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        &__title{
+            width: 100%;
+            @include breakpoint(medium){
+                width: auto;
+            }
+        }
+    
+        @media (min-width: 639px) {
+            &__hr { display: none;}
+        }
+    }
+}
